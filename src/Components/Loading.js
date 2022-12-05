@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
-export default class Loading extends Component {
-  render() {
+const Loading = () => {
+   
     return (
          <div className="container d-flex justify-content-center align-item-center text-center w-1 h-1">
               <img
@@ -12,4 +12,5 @@ export default class Loading extends Component {
          </div>
     );
   }
-}
+
+  export default Loading
