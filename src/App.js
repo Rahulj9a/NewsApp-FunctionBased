@@ -1,27 +1,24 @@
 import "./App.css";
 
-import React, { Component } from "react";
+import React, {useState } from "react";
 import Navbar from "./Components/Navbar";
 import News from "./Components/News";
 import LoadingBar from "react-top-loading-bar";
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-export default class App extends Component {
-     apiKey = "86a2c3d7283f445a9312dded5ba3abd4";
-     state = {
-          progress: 2,
-     };
-     setProgress = (progress) => {
-          this.setState({ progress: progress });
-     };
-     render() {
+const App = () => {
+     let apiKey = "86a2c3d7283f445a9312dded5ba3abd4";
+     const [progress, setProgress] = useState(2)
+     
+     
+      
           return (
                <>
                     <Router>
                          <LoadingBar
                               color="#f11946"
-                              progress={this.state.progress}
+                              progress={progress}
                          />
                          <Navbar />
 
@@ -32,9 +29,9 @@ export default class App extends Component {
                                    key="general"
                                    element={
                                         <News
-                                             setProgress={this.setProgress}
+                                             setProgress={ setProgress}
                                              pageSize="9"
-                                             apiKey={this.apiKey}
+                                             apiKey={ apiKey}
                                              country="in"
                                              category="general"
                                         />
@@ -46,9 +43,9 @@ export default class App extends Component {
                                    key="business"
                                    element={
                                         <News
-                                             setProgress={this.setProgress}
+                                             setProgress={ setProgress}
                                              pageSize="9"
-                                             apiKey={this.apiKey}
+                                             apiKey={ apiKey}
                                              country="in"
                                              category="business"
                                         />
@@ -60,9 +57,9 @@ export default class App extends Component {
                                    key="entertainment"
                                    element={
                                         <News
-                                             setProgress={this.setProgress}
+                                             setProgress={ setProgress}
                                              pageSize="9"
-                                             apiKey={this.apiKey}
+                                             apiKey={ apiKey}
                                              country="in"
                                              category="entertainment"
                                         />
@@ -74,9 +71,9 @@ export default class App extends Component {
                                    key="health"
                                    element={
                                         <News
-                                             setProgress={this.setProgress}
+                                             setProgress={ setProgress}
                                              pageSize="9"
-                                             apiKey={this.apiKey}
+                                             apiKey={ apiKey}
                                              country="in"
                                              category="health"
                                         />
@@ -88,9 +85,9 @@ export default class App extends Component {
                                    key="science"
                                    element={
                                         <News
-                                             setProgress={this.setProgress}
+                                             setProgress={ setProgress}
                                              pageSize="9"
-                                             apiKey={this.apiKey}
+                                             apiKey={ apiKey}
                                              country="in"
                                              category="science"
                                         />
@@ -102,9 +99,9 @@ export default class App extends Component {
                                    key="sports"
                                    element={
                                         <News
-                                             setProgress={this.setProgress}
+                                             setProgress={ setProgress}
                                              pageSize="9"
-                                             apiKey={this.apiKey}
+                                             apiKey={ apiKey}
                                              country="in"
                                              category="sports"
                                         />
@@ -116,9 +113,9 @@ export default class App extends Component {
                                    key="technology"
                                    element={
                                         <News
-                                             setProgress={this.setProgress}
+                                             setProgress={ setProgress}
                                              pageSize="9"
-                                             apiKey={this.apiKey}
+                                             apiKey={ apiKey}
                                              country="in"
                                              category="technology"
                                         />
@@ -128,5 +125,6 @@ export default class App extends Component {
                     </Router>
                </>
           );
-     }
+     
 }
+export default App
